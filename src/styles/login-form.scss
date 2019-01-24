@@ -1,0 +1,21 @@
+.login-form {
+    padding: 2em !important;
+    width: 500px;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    // input:focus {
+    //     border-color: #21ba45 !important;
+    // }
+
+    label {
+        font-size: 1.4rem !important;
+        margin-bottom: 1em !important;
+    }
+
+    button {
+        font-size: 1.4rem !important;
+    }
+}

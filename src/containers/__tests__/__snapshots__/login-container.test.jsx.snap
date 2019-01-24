@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginContainer Component LoginContainer matches snapshot 1`] = `
+<div
+  className="ui message login-form"
+>
+  <form
+    disabled={false}
+    noValidate={true}
+    onError={[Function]}
+    onFocus={[Function]}
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui form"
+      onFocus={[Function]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="username"
+        >
+           
+          Email Address
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="password"
+        >
+           
+          Password
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        className="ui green button"
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;

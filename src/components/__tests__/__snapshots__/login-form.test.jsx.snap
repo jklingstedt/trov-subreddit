@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm Component LoginForm matches snapshot 1`] = `
+<div
+  className="ui message login-form"
+>
+  <form
+    disabled={false}
+    noValidate={true}
+    onError={[Function]}
+    onFocus={[MockFunction]}
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui form"
+      onFocus={[MockFunction]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="username"
+        >
+           
+          Email Address
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="password"
+        >
+           
+          Password
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        className="ui green button"
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`LoginForm Component should display error message 1`] = `
+<div
+  className="ui message login-form"
+>
+  <div
+    className="ui red icon message"
+  >
+    <i
+      aria-hidden="true"
+      className="warning sign icon"
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Error
+      </div>
+      <p>
+        There was an error logging in.
+      </p>
+    </div>
+  </div>
+  <form
+    disabled={false}
+    noValidate={true}
+    onError={[Function]}
+    onFocus={[MockFunction]}
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui form"
+      onFocus={[MockFunction]}
+      onSubmit={[Function]}
+    >
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="username"
+        >
+           
+          Email Address
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="username"
+            name="username"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label
+          htmlFor="password"
+        >
+           
+          Password
+           
+        </label>
+        <div
+          className="ui massive input"
+        >
+          <input
+            id="password"
+            name="password"
+            onBlur={[Function]}
+            onChange={[Function]}
+            required={false}
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        className="ui green button"
+        onClick={[Function]}
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+`;

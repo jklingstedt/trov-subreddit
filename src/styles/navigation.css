@@ -1,0 +1,8 @@
+.user-menu p {
+  margin: 0 !important; }
+
+.user-menu .user-sign-out {
+  cursor: pointer;
+  padding-left: 1em; }
+  .user-menu .user-sign-out .sign-out-icon {
+    margin-left: .5em; }
