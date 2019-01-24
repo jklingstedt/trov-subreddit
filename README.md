@@ -1,1 +1,1 @@
-# JK React Starter Kit
+# Trov Subreddit Application
