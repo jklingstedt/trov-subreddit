@@ -3,48 +3,5 @@
 exports[`MainContainer LoginForm matches snapshot 1`] = `
 <div
   className="main-container"
->
-  <nav>
-    <div
-      className="ui pointing menu"
-    >
-      <div
-        className="item"
-        onClick={[Function]}
-      >
-        <a
-          aria-current="page"
-          className="active"
-          href="/"
-          onClick={[Function]}
-          style={Object {}}
-        >
-          Home
-        </a>
-      </div>
-      <div
-        className="right menu"
-      >
-        <div
-          className="item user-menu"
-          onClick={[Function]}
-        >
-          <p
-            className="user-name"
-          />
-          <span
-            className="user-sign-out"
-            onClick={[Function]}
-          >
-            Sign Out
-            <i
-              aria-hidden="true"
-              className="log out icon sign-out-icon"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
+/>
 `;

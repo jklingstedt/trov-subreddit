@@ -1,4 +1,4 @@
-import { setUserData } from '../../src/services/login'
+// import { setUserData } from '../../src/services/login'
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -12,12 +12,12 @@ import { setUserData } from '../../src/services/login'
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add('login', (userType) => {
-    cy.fixture('tokens').then((tokens) => {
-        console.log(tokens[userType]) // eslint-disable-line
-        setUserData(tokens[userType])
-    })
-})
+// Cypress.Commands.add('login', (userType) => {
+//     cy.fixture('tokens').then((tokens) => {
+//         console.log(tokens[userType]) // eslint-disable-line
+//         setUserData(tokens[userType])
+//     })
+// })
 
 
 // -- This is a child command --
