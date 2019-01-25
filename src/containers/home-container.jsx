@@ -1,24 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types' // eslint-disable-line
+import React from 'react'
 
-import { getSubreddits } from '../services/get-subreddits'
+const MainContainer = () => (
+    <div>Home</div>
+)
 
-class HomeContainer extends Component { // eslint-disable-line
-    getSubreddits() { // eslint-disable-line
-        getSubreddits()
-    }
-
-    render() { // eslint-disable-line
-        return (
-            <div>
-                Home
-                <button onClick={this.getSubreddits}>Get Subreddits</button>
-            </div>
-        )
-    }
-}
-
-HomeContainer.propTypes = {
-}
-
-export default HomeContainer
+export default MainContainer

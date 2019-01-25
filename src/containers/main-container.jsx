@@ -2,13 +2,14 @@ import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import MainContainerElement from '../components/elements/main-container-element'
 import asyncComponent from '../components/async'
 
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
 export const Async404 = asyncComponent(() => import('../components/error-404'))
 
 export const MainContainer = () => (
-    <div className="main-container">
+    <MainContainerElement>
         <Router>
             <Fragment>
                 <Switch>
@@ -17,7 +18,7 @@ export const MainContainer = () => (
                 </Switch>
             </Fragment>
         </Router>
-    </div>
+    </MainContainerElement>
 )
 
 export const mapStateToProps = state => ({
