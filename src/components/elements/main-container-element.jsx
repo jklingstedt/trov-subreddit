@@ -14,7 +14,7 @@ const MainContainerElement = props => (
     </StyledMainContainer>
 )
 
-MainContainerElement.propTypes ={
+MainContainerElement.propTypes = {
     children: instanceOf(Object).isRequired
 }
 

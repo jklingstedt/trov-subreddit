@@ -11,7 +11,7 @@ describe('MainContainer', () => {
 
     it('should render MainContainer', () => {
         expect(wrapper.find('BrowserRouter').length).toBe(1)
-        expect(wrapper.find('Route').length).toBe(2)
+        expect(wrapper.find('Route').length).toBe(3)
     })
 
     it('LoginForm matches snapshot', () => {
