@@ -6,6 +6,7 @@ import MainContainerElement from '../components/elements/main-container-element'
 import asyncComponent from '../components/async'
 
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
+const AsyncSubredditContainer = asyncComponent(() => import('./subreddit-container'))
 export const Async404 = asyncComponent(() => import('../components/error-404'))
 
 export const MainContainer = () => (
@@ -14,6 +15,7 @@ export const MainContainer = () => (
             <Fragment>
                 <Switch>
                     <Route exact path="/" component={AsyncHomeContainer} />
+                    <Route exact path="/r/:sub" component={AsyncSubredditContainer} />
                     <Route component={Async404} />
                 </Switch>
             </Fragment>
