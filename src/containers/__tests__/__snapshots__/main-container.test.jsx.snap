@@ -48,9 +48,3 @@ exports[`MainContainer LoginForm matches snapshot 1`] = `
   </nav>
 </div>
 `;
-
-exports[`MainContainer should render LoginContainer if not authed 1`] = `
-<div
-  className="main-container"
-/>
-`;

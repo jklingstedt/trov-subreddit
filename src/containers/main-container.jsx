@@ -8,7 +8,7 @@ import NavigationContainer from './navigation-container' // eslint-disable-line
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
 export const Async404 = asyncComponent(() => import('../components/error-404'))
 
-const MainContainer = () => (
+export const MainContainer = () => (
     <div className="main-container">
         <Router>
             <Fragment>

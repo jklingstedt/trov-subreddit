@@ -5,8 +5,10 @@
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important; }
-  .login-form label {
-    font-size: 1.4rem !important;
-    margin-bottom: 1em !important; }
-  .login-form button {
-    font-size: 1.4rem !important; }
+
+.login-form label {
+  font-size: 1.4rem !important;
+  margin-bottom: 1em !important; }
+
+.login-form button {
+  font-size: 1.4rem !important; }

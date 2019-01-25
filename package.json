@@ -1,5 +1,5 @@
 {
-    "name": "jk-react-starter-kit",
+    "name": "trov-subreddit",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -7,7 +7,7 @@
         "start": "npm-run-all -p watch-css start-js",
         "build-js": "react-scripts build",
         "build:analyze": "node build.js",
-        "build:prod": "npm-run-all build-css build:analyze",
+        "build:prod": "npm-run-all build-css build-js",
         "build:stage": "env-cmd .env.staging npm-run-all build-css build-js",
         "build:dev": "env-cmd .env.development npm-run-all build-css build-js",
         "build:local": "env-cmd .env.development.local npm-run-all build-css build:analyze",
