@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { shape } from 'prop-types'
 
 import { getSubreddits } from '../services/get-subreddits'
+import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
 
 class SubredditContainer extends Component {
@@ -22,7 +23,7 @@ class SubredditContainer extends Component {
 
     render() {
         return (
-            <ul>
+            <UnformattedList>
                 {this.state.currentSubData.map(
                     item => (
                         (
@@ -33,7 +34,7 @@ class SubredditContainer extends Component {
                         )
                     )
                 )}
-            </ul>
+            </UnformattedList>
         )
     }
 }

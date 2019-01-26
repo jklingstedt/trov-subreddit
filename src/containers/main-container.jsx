@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import MainContainerElement from '../components/elements/main-container-element'
 import asyncComponent from '../components/async'
+import Header from '../components/header'
 
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
 const AsyncSubredditContainer = asyncComponent(() => import('./subreddit-container'))
@@ -13,6 +14,7 @@ export const MainContainer = () => (
     <MainContainerElement>
         <Router>
             <Fragment>
+                <Header />
                 <Switch>
                     <Route exact path="/" component={AsyncHomeContainer} />
                     <Route exact path="/r/:sub" component={AsyncSubredditContainer} />
