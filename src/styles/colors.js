@@ -1,3 +1,6 @@
-export const colors = { // eslint-disable-line
-    red: 'red'
+const colors = {
+    red: 'red',
+    blue: 'green'
 }
+
+export { colors as default }

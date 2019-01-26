@@ -1,5 +1,6 @@
 import React from 'react'
 import { shape, string } from 'prop-types'
+import { formatDistance } from 'date-fns'
 
 import ExternalLink from '../components/elements/external-link'
 
@@ -10,24 +11,19 @@ const ArticleItem = ({ data }) => (
         {data.thumbnail !== 'self' && (
             <img src={data.thumbnail} alt={data.title} />
         )}
-        <ExternalLink
-            url={`${baseURL}/${data.permalink}`}
-        >
-            <p>{data.title}</p>
+        <ExternalLink url={`${baseURL}/${data.permalink}`}>
+            {data.title}
         </ExternalLink>
         <p>
             Posted by {' '}
             <ExternalLink url={`${baseURL}/user/${data.author}`}>
                 {data.author}
             </ExternalLink>
-            {data.created}
+            {formatDistance(data.created * 1000, Date.now())}
+            {' '} ago
         </p>
         <p>
-            <ExternalLink
-                href={`${baseURL}/${data.permalink}#siteTable`}
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <ExternalLink url={`${baseURL}/${data.permalink}#siteTable`}>
                 comments
             </ExternalLink>
         </p>

@@ -3,7 +3,7 @@ import { instanceOf } from 'prop-types'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { colors } from '../styles/colors'
+import colors from '../styles/colors'
 
 const StyledNav = styled.nav`
     max-width: 200px;
