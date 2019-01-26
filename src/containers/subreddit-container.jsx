@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { shape } from 'prop-types'
 
 import { getSubreddits } from '../services/get-subreddits'
+import ArticleItem from '../components/article-item'
 
 class SubredditContainer extends Component {
     constructor() {
@@ -20,21 +21,18 @@ class SubredditContainer extends Component {
     }
 
     render() {
-        // eslint-disable-line
-        console.log(this.state.currentSubData) // eslint-disable-line
         return (
             <ul>
-                {this.state.currentSubData.map(item => (
-                    <li key={item.data.name}>
-                        <a
-                            href={`https://reddit.com/${item.data.permalink}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {item.data.title}
-                        </a>
-                    </li>
-                ))}
+                {this.state.currentSubData.map(
+                    item => (
+                        (
+                            <ArticleItem
+                                data={item.data}
+                                key={item.data.name}
+                            />
+                        )
+                    )
+                )}
             </ul>
         )
     }
