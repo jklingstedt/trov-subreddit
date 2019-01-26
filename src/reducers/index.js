@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import user from './user'
+import redditData from './reddit-data'
 
 const rootReducer = combineReducers({
-    user
+    redditData
 })
 
 export default rootReducer
