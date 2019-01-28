@@ -1,14 +1,13 @@
-import { AUTH_USER, UNAUTH_USER } from '../actions/user'
+import { SET_ARTICLES } from '../actions/reddit-data'
 
 const intitialState = {
-    isAuthed: false
+    currentSub: null,
+    articles: []
 }
 
 export default (state = intitialState, action) => {
     switch (action.type) {
-        case AUTH_USER:
-            return action.payload
-        case UNAUTH_USER:
+        case SET_ARTICLES:
             return action.payload
         default:
             return state

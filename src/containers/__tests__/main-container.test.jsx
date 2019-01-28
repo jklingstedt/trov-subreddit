@@ -10,7 +10,7 @@ describe('MainContainer', () => {
     const wrapper = shallow(<MainContainer />)
 
     it('should render MainContainer', () => {
-        expect(wrapper.find('BrowserRouter').length).toBe(1)
+        expect(wrapper.find('Router').length).toBe(1)
         expect(wrapper.find('Route').length).toBe(3)
     })
 

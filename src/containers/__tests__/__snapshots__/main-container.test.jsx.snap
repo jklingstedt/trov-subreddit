@@ -3,5 +3,41 @@
 exports[`MainContainer LoginForm matches snapshot 1`] = `
 <div
   className="sc-bdVaJa lmHIzD"
-/>
+>
+  <header
+    className="sc-bwzfXH iTUIze"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <select
+      className="sc-htpNat KtFsv"
+      onChange={[Function]}
+    >
+      <option
+        value="test"
+      >
+        Test
+      </option>
+      <option
+        value="guitarpedals"
+      >
+        Guitar Pedals
+      </option>
+    </select>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        name="subreddit"
+      />
+      <button>
+        go
+      </button>
+    </form>
+  </header>
+</div>
 `;
