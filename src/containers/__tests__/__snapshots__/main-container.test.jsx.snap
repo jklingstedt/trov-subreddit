@@ -7,6 +7,12 @@ exports[`MainContainer LoginForm matches snapshot 1`] = `
   <header
     className="sc-bwzfXH iTUIze"
   >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
     <select
       className="sc-htpNat KtFsv"
       onChange={[Function]}

@@ -12,30 +12,38 @@ const StyledArticleItem = styled.li`
     padding: 1em;
     margin-bottom: 1em;
     border-radius: .5em;
+    display: grid;
+`
+
+const StyledTextWrapper = styled.div`
 `
 
 const ArticleItem = ({ data }) => (
     <StyledArticleItem key={data.name}>
         {data.thumbnail !== 'self' && (
-            <img src={data.thumbnail} alt={data.title} />
+            <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
+                <img src={data.thumbnail} alt={data.title} />
+            </ExternalLink>
         )}
-        <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
-            {data.title}
-        </ExternalLink>
-        <p>
-            Posted by {' '}
-            <ExternalLink url={`${redditBaseURL}/user/${data.author}`}>
-                {data.author}
+        <StyledTextWrapper>
+            <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
+                {data.title}
             </ExternalLink>
-            {' '}
-            {formatDistance(data.created * 1000, Date.now())}
-            {' '} ago
-        </p>
-        <p>
-            <ExternalLink url={`${redditBaseURL}/${data.permalink}#siteTable`}>
-                comments
-            </ExternalLink>
-        </p>
+            <p>
+                Posted by {' '}
+                <ExternalLink url={`${redditBaseURL}/user/${data.author}`}>
+                    {data.author}
+                </ExternalLink>
+                {' '}
+                {formatDistance(data.created * 1000, Date.now())}
+                {' '} ago
+            </p>
+            <p>
+                <ExternalLink url={`${redditBaseURL}/${data.permalink}#siteTable`}>
+                    comments
+                </ExternalLink>
+            </p>
+        </StyledTextWrapper>
     </StyledArticleItem>
 )
 
