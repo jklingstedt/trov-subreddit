@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import MainContainerElement from '../components/elements/main-container-element'
+import history from '../utils/history'
 import asyncComponent from '../components/async'
+import MainContainerElement from '../components/elements/main-container-element'
 import Header from '../components/header'
 
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
@@ -12,7 +13,7 @@ export const Async404 = asyncComponent(() => import('../components/error-404'))
 
 export const MainContainer = () => (
     <MainContainerElement>
-        <Router>
+        <Router history={history}>
             <Fragment>
                 <Header />
                 <Switch>

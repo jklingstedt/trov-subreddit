@@ -1,8 +1,8 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { redditBaseURL } from '../constants'
+import history from '../utils/history'
 import colors from '../styles/colors'
 
 const StyledHeader = styled.header`
@@ -14,21 +14,17 @@ const StyledHeader = styled.header`
 const StyledSelect = styled.select``
 
 const handleSelectChange = (e) => {
-    console.log(e.target.value) // eslint-disable-line
-    return (
-        <Route>
-            <Redirect to={`${redditBaseURL}/r/${e.target.value}`} />
-        </Route>
-    )
+    history.push(`/r/${e.target.value}`)
 }
 
 const handleFormSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target.children[0].value) // eslint-disable-line
+    history.push(`/r/${e.target.children[0].value}`)
 }
 
 const Header = () => (
     <StyledHeader>
+        <Link to="/">Home</Link>
         <StyledSelect onChange={e => handleSelectChange(e)}>
             <option value="test">Test</option>
             <option value="guitarpedals">

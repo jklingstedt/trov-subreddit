@@ -27,6 +27,7 @@ const ArticleItem = ({ data }) => (
             <ExternalLink url={`${redditBaseURL}/user/${data.author}`}>
                 {data.author}
             </ExternalLink>
+            {' '}
             {formatDistance(data.created * 1000, Date.now())}
             {' '} ago
         </p>
