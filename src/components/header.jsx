@@ -6,25 +6,45 @@ import { suggestedSubreddits } from '../constants'
 import history from '../utils/history'
 import colors from '../styles/colors'
 import Button from './elements/button'
+import Fieldset from './elements/fieldset'
 
 const StyledLink = styled(Link)`
     color: ${colors.green};
     text-decoration: none;
     font-weight: bold;
     font-size: 120%;
+    min-width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const StyledHeader = styled.header`
     background-color: ${colors.lightGrey};
     padding: 1em;
     border-radius: 0 0 .5em .5em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
 `
 
-const StyledSelect = styled.select``
+const StyledSelect = styled.select`
+    border: none;
+    font-size: 110%;
+    margin-top: .5em;
+    padding: .5em;
+    width: 100%;
+`
 
 const StyledForm = styled.form`
+    align-self: flex-end;
+    flex-grow: 2;
+
+    input {
+        border: none;
+        border-radius: .5em;
+        padding: .5em;
+        font-size: 100%;
+        margin: 0 1em 0 0;
+    }
 `
 
 const handleSelectChange = (e) => {
@@ -39,23 +59,26 @@ const handleFormSubmit = (e) => {
 const Header = () => (
     <StyledHeader>
         <StyledLink to="/">Home</StyledLink>
-        <fieldset>
+        <Fieldset>
             <label htmlFor="subreddit-select">Select a Suggested Subreddit</label>
             <StyledSelect onChange={e => handleSelectChange(e)} id="subreddit-select">
                 <optgroup label="Select a Suggested Subreddit">
                     {suggestedSubreddits.map(item => (
-                        <option value={item.slug} key={item.slug}>
+                        <option
+                            value={item.slug}
+                            key={item.slug}
+                        >
                             {item.title}
                         </option>
                     ))}
                 </optgroup>
             </StyledSelect>
-        </fieldset>
+        </Fieldset>
         <StyledForm onSubmit={e => handleFormSubmit(e)}>
-            <label htmlFor="subreddit-search">
-                Enter a subreddit
-            </label>
-            <input name="subreddit" id="subreddit-search" />
+            <input
+                name="subreddit"
+                placeholder="Enter a subreddit..."
+            />
             <Button color="green" size="small">submit</Button>
         </StyledForm>
     </StyledHeader>

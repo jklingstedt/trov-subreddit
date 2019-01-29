@@ -14,8 +14,8 @@ export const suggestedSubreddits = [
         slug: 'guitar'
     },
     {
-        title: 'dataisbeatiful',
-        slug: 'dataisbeatiful'
+        title: 'dataisbeautiful',
+        slug: 'dataisbeautiful'
     },
     {
         title: 'DIY',

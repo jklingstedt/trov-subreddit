@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import { shape, func, instanceOf, string } from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -8,7 +8,7 @@ import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
 import Button from '../components/elements/button'
 
-class SubredditContainer extends Component {
+class SubredditContainer extends PureComponent {
     static defaultProps = {
         currentSub: null,
         afterPage: null
