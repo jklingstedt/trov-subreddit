@@ -5,37 +5,89 @@ exports[`MainContainer LoginForm matches snapshot 1`] = `
   className="sc-bdVaJa enHcpj"
 >
   <header
-    className="sc-bwzfXH iTUIze"
+    className="sc-ifAKCX gcPEBf"
   >
     <a
+      className="sc-bxivhb drpxUl"
       href="/"
       onClick={[Function]}
     >
       Home
     </a>
-    <select
-      className="sc-htpNat KtFsv"
-      onChange={[Function]}
+    <fieldset
+      className="sc-htpNat PiYSI"
     >
-      <option
-        value="test"
+      <label
+        htmlFor="subreddit-select"
       >
-        Test
-      </option>
-      <option
-        value="guitarpedals"
+        Select a Suggested Subreddit
+      </label>
+      <select
+        className="sc-EHOje jvXsky"
+        id="subreddit-select"
+        onChange={[Function]}
       >
-        Guitar Pedals
-      </option>
-    </select>
+        <optgroup
+          label="Select a Suggested Subreddit"
+        >
+          <option
+            value="reactjs"
+          >
+            reactjs
+          </option>
+          <option
+            value="guitarpedals"
+          >
+            Guitar Pedals
+          </option>
+          <option
+            value="guitar"
+          >
+            Guitar
+          </option>
+          <option
+            value="dataisbeautiful"
+          >
+            dataisbeautiful
+          </option>
+          <option
+            value="DIY"
+          >
+            DIY
+          </option>
+          <option
+            value="doommetal"
+          >
+            Doom Metal
+          </option>
+          <option
+            value="javascript"
+          >
+            javascript
+          </option>
+          <option
+            value="nottheonion"
+          >
+            Not The Onion
+          </option>
+        </optgroup>
+      </select>
+    </fieldset>
     <form
+      className="sc-bZQynM epBIuB"
       onSubmit={[Function]}
     >
       <input
         name="subreddit"
+        placeholder="Enter a subreddit..."
       />
-      <button>
-        go
+      <button
+        className="sc-bwzfXH cEwmJl"
+        color="green"
+        onClick={[Function]}
+        size="small"
+      >
+        submit
       </button>
     </form>
   </header>
