@@ -8,12 +8,12 @@ import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
 
 class SubredditContainer extends Component {
-    static defaultProps ={
+    static defaultProps = {
         currentSub: null,
         afterPage: null
     }
 
-    static propTypes ={
+    static propTypes = {
         articles: instanceOf(Array).isRequired,
         currentSub: string,
         afterPage: string,
@@ -39,12 +39,17 @@ class SubredditContainer extends Component {
     }
 
     fetchAndStoreSubreddits(paging = false) {
-        getSubreddits(this.props.match.params.sub, paging, this.props.afterPage).then((res) => {
+        getSubreddits(
+            this.props.match.params.sub,
+            paging,
+            this.props.afterPage
+        ).then((res) => {
             this.props.dispatch(
                 setArticles(
                     res.data.data.children,
                     this.props.match.params.sub,
-                    res.data.data.after
+                    res.data.data.after,
+                    paging
                 )
             )
         })
@@ -56,20 +61,12 @@ class SubredditContainer extends Component {
     }
 
     render() {
-        console.log(this.props) // eslint-disable-line
         return (
             <Fragment>
                 <UnformattedList>
-                    {this.props.articles.map(
-                        item => (
-                            (
-                                <ArticleItem
-                                    data={item.data}
-                                    key={item.data.name}
-                                />
-                            )
-                        )
-                    )}
+                    {this.props.articles.map(item => (
+                        <ArticleItem data={item.data} key={item.data.name} />
+                    ))}
                 </UnformattedList>
                 <button onClick={this.getNewArticles}>Get new articles</button>
             </Fragment>

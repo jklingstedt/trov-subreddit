@@ -11,6 +11,5 @@ export const getSubreddits = ( // eslint-disable-line
     if (paging) {
         requestURL = `${requestURL}?after=${afterPage}`
     }
-    console.log(requestURL) // eslint-disable-line
     return axios.get(requestURL)
 }
