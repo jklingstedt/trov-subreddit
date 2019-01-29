@@ -6,23 +6,29 @@ import styled from 'styled-components'
 import colors from '../styles/colors'
 
 const StyledNav = styled.nav`
-    max-width: 200px;
-    margin: auto;
 `
 
 const StyledList = styled.ul`
     list-style: none;
     padding: 0;
+    font-size: 110%;
+    line-height: 1.4;
 
     a {
         text-decoration: none;
         display: block;
-        color: ${colors.red}
+        color: ${colors.green};
+        transition: color .2s linear;
+
+        &:hover {
+            color: ${colors.black}
+        }
     }
 `
 
 const SubredditNav = props => (
     <StyledNav>
+        <h2>Suggested Subreddits</h2>
         <StyledList>
             {props.subreddits.map(sub => (
                 <li key={sub.slug}>

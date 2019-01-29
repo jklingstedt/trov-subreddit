@@ -6,7 +6,7 @@ import { setArticles } from '../actions/reddit-data'
 import { getSubreddits } from '../services/get-subreddits'
 import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
-import PagingButton from '../components/paging-button'
+import Button from '../components/elements/button'
 
 class SubredditContainer extends Component {
     static defaultProps = {
@@ -18,7 +18,11 @@ class SubredditContainer extends Component {
         articles: instanceOf(Array).isRequired,
         currentSub: string,
         afterPage: string,
-        match: shape({}).isRequired,
+        match: shape({
+            params: shape({
+                sub: string.isRequired
+            }).isRequired
+        }).isRequired,
         dispatch: func.isRequired
     }
 
@@ -67,9 +71,9 @@ class SubredditContainer extends Component {
                         <ArticleItem data={item.data} key={item.data.name} />
                     ))}
                 </UnformattedList>
-                <PagingButton onClick={this.getNewArticles}>
+                <Button color="green" size="large" onClick={this.getNewArticles}>
                     Get new articles
-                </PagingButton>
+                </Button>
             </Fragment>
         )
     }
