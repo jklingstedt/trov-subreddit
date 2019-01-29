@@ -4,6 +4,7 @@ import { formatDistance } from 'date-fns'
 import styled from 'styled-components'
 
 import ExternalLink from '../components/elements/external-link'
+import ImageReplacement from '../components/elements/image-replacement'
 import colors from '../styles/colors'
 import { redditBaseURL } from '../constants'
 
@@ -13,22 +14,46 @@ const StyledArticleItem = styled.li`
     margin-bottom: 1em;
     border-radius: .5em;
     display: grid;
+    grid-template-columns: 1fr 5fr;
+    transition: background-color .3s linear;
+
+    &:hover {
+        background-color: ${colors.darkGrey}
+    }
+
+    a {
+        color: ${colors.green};
+        text-decoration: none;
+    }
+
+    h2 {
+        font-size: 110%;
+        margin-top: 0;
+    }
+`
+const StyledImage = styled.img`
+    border-radius: .5em;
 `
 
-const StyledTextWrapper = styled.div`
-`
+const StyledTextWrapper = styled.div``
 
 const ArticleItem = ({ data }) => (
     <StyledArticleItem key={data.name}>
-        {data.thumbnail !== 'self' && (
+        {data.thumbnail !== 'self' ? (
             <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
-                <img src={data.thumbnail} alt={data.title} />
+                <StyledImage src={data.thumbnail} alt={data.title} />
             </ExternalLink>
-        )}
+        ) :
+            (
+                <ImageReplacement />
+            )
+        }
         <StyledTextWrapper>
-            <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
-                {data.title}
-            </ExternalLink>
+            <h2>
+                <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
+                    {data.title}
+                </ExternalLink>
+            </h2>
             <p>
                 Posted by {' '}
                 <ExternalLink url={`${redditBaseURL}/user/${data.author}`}>

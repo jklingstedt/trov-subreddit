@@ -6,6 +6,7 @@ import { setArticles } from '../actions/reddit-data'
 import { getSubreddits } from '../services/get-subreddits'
 import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
+import PagingButton from '../components/paging-button'
 
 class SubredditContainer extends Component {
     static defaultProps = {
@@ -21,21 +22,19 @@ class SubredditContainer extends Component {
         dispatch: func.isRequired
     }
 
-    constructor() {
-        super()
-        this.state = {
-            shouldUpdateExistingSubs: false
-        }
-    }
-
     componentDidMount() {
         this.fetchAndStoreSubreddits()
+        this.articleTimer = window.setInterval(this.getNewArticles, 60000)
     }
 
     componentDidUpdate() {
         if (this.props.match.params.sub !== this.props.currentSub) {
             this.fetchAndStoreSubreddits()
         }
+    }
+
+    componentWillUnmount() {
+        this.articleTimer = clearInterval(this.articleTimer)
     }
 
     fetchAndStoreSubreddits(paging = false) {
@@ -68,7 +67,9 @@ class SubredditContainer extends Component {
                         <ArticleItem data={item.data} key={item.data.name} />
                     ))}
                 </UnformattedList>
-                <button onClick={this.getNewArticles}>Get new articles</button>
+                <PagingButton onClick={this.getNewArticles}>
+                    Get new articles
+                </PagingButton>
             </Fragment>
         )
     }
