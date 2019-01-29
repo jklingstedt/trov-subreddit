@@ -11,6 +11,4 @@ const enhancer = compose(
         f => f
 )
 
-const store = createStore(rootReducer, {}, enhancer)
-
-export default store
+export default createStore(rootReducer, {}, enhancer)

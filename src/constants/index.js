@@ -1,1 +1,1 @@
-export const redditBaseURL = 'https://reddit.com' // eslint-disable-line
+export const redditBaseURL = 'https://www.reddit.com' // eslint-disable-line

@@ -1,13 +1,16 @@
 import axios from 'axios'
+import { redditBaseURL } from '../constants'
 
-import store from '../store'
-
-export const getSubreddits = (subreddit='guitarpedals', paging=false, type='hot') => { // eslint-disable-line
-    let afterPage = null
+export const getSubreddits = ( // eslint-disable-line
+    subreddit,
+    paging = false,
+    afterPage,
+    type = 'hot'
+) => {
+    let requestURL = `${redditBaseURL}/r/${subreddit}/${type}/.json`
     if (paging) {
-        const currentArticles = store.getState().redditData.articles
-        afterPage = currentArticles[currentArticles.length - 1].data
-        console.log(afterPage) // eslint-disable-line
+        requestURL = `${requestURL}?after=${afterPage}`
     }
-    return axios.get(`https://www.reddit.com/r/${subreddit}/${type}/.json?after=${afterPage}`)
+    console.log(requestURL) // eslint-disable-line
+    return axios.get(requestURL)
 }

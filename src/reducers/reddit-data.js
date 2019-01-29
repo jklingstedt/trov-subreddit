@@ -2,7 +2,8 @@ import { SET_ARTICLES } from '../actions/reddit-data'
 
 const intitialState = {
     currentSub: null,
-    articles: []
+    articles: [],
+    afterPage: null
 }
 
 export default (state = intitialState, action) => {

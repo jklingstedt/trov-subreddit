@@ -9,12 +9,14 @@ import ArticleItem from '../components/article-item'
 
 class SubredditContainer extends Component {
     static defaultProps ={
-        currentSub: null
+        currentSub: null,
+        afterPage: null
     }
 
     static propTypes ={
         articles: instanceOf(Array).isRequired,
         currentSub: string,
+        afterPage: string,
         match: shape({}).isRequired,
         dispatch: func.isRequired
     }
@@ -37,11 +39,12 @@ class SubredditContainer extends Component {
     }
 
     fetchAndStoreSubreddits(paging = false) {
-        getSubreddits(this.props.match.params.sub, paging).then((res) => {
+        getSubreddits(this.props.match.params.sub, paging, this.props.afterPage).then((res) => {
             this.props.dispatch(
                 setArticles(
                     res.data.data.children,
                     this.props.match.params.sub,
+                    res.data.data.after
                 )
             )
         })
@@ -53,6 +56,7 @@ class SubredditContainer extends Component {
     }
 
     render() {
+        console.log(this.props) // eslint-disable-line
         return (
             <Fragment>
                 <UnformattedList>
@@ -75,7 +79,8 @@ class SubredditContainer extends Component {
 
 const mapDispatchToProps = state => ({
     articles: state.redditData.articles,
-    currentSub: state.redditData.currentSub
+    currentSub: state.redditData.currentSub,
+    afterPage: state.redditData.afterPage
 })
 
 export default connect(mapDispatchToProps)(SubredditContainer)
