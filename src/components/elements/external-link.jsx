@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { string, instanceOf, oneOfType } from 'prop-types'
 import styled from 'styled-components'
 
 import colors from '../../styles/colors'
@@ -20,7 +20,7 @@ const ExternalLink = ({ url, children }) => (
 
 ExternalLink.propTypes = {
     url: string.isRequired,
-    children: string.isRequired
+    children: oneOfType([string, instanceOf(Object)]).isRequired
 }
 
 export default ExternalLink

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { shape, func, instanceOf, string } from 'prop-types'
 import { connect } from 'react-redux'
 
@@ -8,11 +8,22 @@ import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
 
 class SubredditContainer extends Component {
+    static defaultProps ={
+        currentSub: null
+    }
+
     static propTypes ={
         articles: instanceOf(Array).isRequired,
-        currentSub: string.isRequired,
+        currentSub: string,
         match: shape({}).isRequired,
         dispatch: func.isRequired
+    }
+
+    constructor() {
+        super()
+        this.state = {
+            shouldUpdateExistingSubs: false
+        }
     }
 
     componentDidMount() {
@@ -25,8 +36,8 @@ class SubredditContainer extends Component {
         }
     }
 
-    fetchAndStoreSubreddits() {
-        getSubreddits(this.props.match.params.sub).then((res) => {
+    fetchAndStoreSubreddits(paging = false) {
+        getSubreddits(this.props.match.params.sub, paging).then((res) => {
             this.props.dispatch(
                 setArticles(
                     res.data.data.children,
@@ -36,20 +47,28 @@ class SubredditContainer extends Component {
         })
     }
 
+    getNewArticles = () => {
+        const paging = true
+        this.fetchAndStoreSubreddits(paging)
+    }
+
     render() {
         return (
-            <UnformattedList>
-                {this.props.articles.map(
-                    item => (
-                        (
-                            <ArticleItem
-                                data={item.data}
-                                key={item.data.name}
-                            />
+            <Fragment>
+                <UnformattedList>
+                    {this.props.articles.map(
+                        item => (
+                            (
+                                <ArticleItem
+                                    data={item.data}
+                                    key={item.data.name}
+                                />
+                            )
                         )
-                    )
-                )}
-            </UnformattedList>
+                    )}
+                </UnformattedList>
+                <button onClick={this.getNewArticles}>Get new articles</button>
+            </Fragment>
         )
     }
 }
