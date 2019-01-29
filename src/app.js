@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 
 import store from './store'
-import MainContainer from './containers/main-container' // eslint-disable-line
+import MainContainer from './containers/main-container'
 
 const App = () => (
     <Provider store={store}>
