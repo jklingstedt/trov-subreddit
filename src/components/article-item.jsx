@@ -39,7 +39,7 @@ const StyledTextWrapper = styled.div``
 
 const ArticleItem = ({ data }) => (
     <StyledArticleItem key={data.name}>
-        {data.thumbnail !== 'self' ? (
+        {data.thumbnail && data.thumbnail !== 'self' && data.thumbnail !== 'default' ? (
             <ExternalLink url={`${redditBaseURL}/${data.permalink}`}>
                 <StyledImage src={data.thumbnail} alt={data.title} />
             </ExternalLink>

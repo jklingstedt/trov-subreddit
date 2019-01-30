@@ -52,7 +52,8 @@
             "!src/index.js",
             "!src/app.js",
             "!src/registerServiceWorker.js",
-            "!src/components/async.js"
+            "!src/components/async.js",
+            "!src/store/index.js"
         ]
     },
     "browserslist": [

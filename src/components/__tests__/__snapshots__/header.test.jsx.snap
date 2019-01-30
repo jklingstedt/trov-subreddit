@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component Header matches snapshot 1`] = `
+<header
+  className="sc-bxivhb kwEEYI"
+>
+  <a
+    className="sc-htpNat heduYG"
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <fieldset
+    className="sc-bwzfXH eEaCPL"
+  >
+    <label
+      htmlFor="subreddit-select"
+    >
+      Select a Suggested Subreddit
+    </label>
+    <select
+      className="sc-ifAKCX byVZdX"
+      id="subreddit-select"
+      onChange={[Function]}
+    >
+      <optgroup
+        label="Select a Suggested Subreddit"
+      >
+        <option
+          value="reactjs"
+        >
+          reactjs
+        </option>
+        <option
+          value="guitarpedals"
+        >
+          Guitar Pedals
+        </option>
+        <option
+          value="guitar"
+        >
+          Guitar
+        </option>
+        <option
+          value="dataisbeautiful"
+        >
+          dataisbeautiful
+        </option>
+        <option
+          value="DIY"
+        >
+          DIY
+        </option>
+        <option
+          value="doommetal"
+        >
+          Doom Metal
+        </option>
+        <option
+          value="javascript"
+        >
+          javascript
+        </option>
+        <option
+          value="nottheonion"
+        >
+          Not The Onion
+        </option>
+      </optgroup>
+    </select>
+  </fieldset>
+  <form
+    className="sc-EHOje ieAJSh"
+    onSubmit={[Function]}
+  >
+    <input
+      name="subreddit"
+      placeholder="Enter a subreddit..."
+    />
+    <button
+      className="sc-bdVaJa hSwCUs"
+      color="green"
+      onClick={[Function]}
+      size="small"
+    >
+      submit
+    </button>
+  </form>
+</header>
+`;
