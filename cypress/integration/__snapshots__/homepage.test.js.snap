@@ -1,0 +1,44 @@
+exports[`Home page > should render the home page #0`] = `
+<header class="sc-ifAKCX gcPEBf">
+  <a class="sc-bxivhb drpxUl" href="/">Home</a>
+  <fieldset class="sc-htpNat PiYSI">
+    <label for="subreddit-select">Select a Suggested Subreddit</label
+    ><select id="subreddit-select" class="sc-EHOje jvXsky"
+      ><optgroup label="Select a Suggested Subreddit"
+        ><option value="reactjs">reactjs</option
+        ><option value="guitarpedals">Guitar Pedals</option
+        ><option value="guitar">Guitar</option
+        ><option value="dataisbeautiful">dataisbeautiful</option
+        ><option value="DIY">DIY</option
+        ><option value="doommetal">Doom Metal</option
+        ><option value="javascript">javascript</option
+        ><option value="nottheonion">Not The Onion</option></optgroup
+      ></select
+    >
+  </fieldset>
+  <form class="sc-bZQynM epBIuB">
+    <input name="subreddit" placeholder="Enter a subreddit..." /><button
+      color="green"
+      class="sc-bwzfXH cEwmJl"
+    >
+      submit
+    </button>
+  </form>
+</header>
+`;
+
+exports[`Home page > should render the home page #1`] = `
+<nav class="sc-gzVnrw fgSTpW">
+  <h2>Suggested Subreddits</h2>
+  <ul class="sc-htoDjs emIcqi">
+    <li><a href="/r/reactjs">reactjs</a></li>
+    <li><a href="/r/guitarpedals">Guitar Pedals</a></li>
+    <li><a href="/r/guitar">Guitar</a></li>
+    <li><a href="/r/dataisbeautiful">dataisbeautiful</a></li>
+    <li><a href="/r/DIY">DIY</a></li>
+    <li><a href="/r/doommetal">Doom Metal</a></li>
+    <li><a href="/r/javascript">javascript</a></li>
+    <li><a href="/r/nottheonion">Not The Onion</a></li>
+  </ul>
+</nav>
+`;
