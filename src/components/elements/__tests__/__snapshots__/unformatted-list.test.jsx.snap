@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnformattedList Component UnformattedList matches snapshot 1`] = `
+<ul
+  className="sc-bdVaJa EFgaU"
+>
+  <li>
+    test
+  </li>
+</ul>
+`;

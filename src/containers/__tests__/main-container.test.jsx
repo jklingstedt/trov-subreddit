@@ -1,10 +1,8 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 
-import { MainContainer } from '../main-container'
-import store from '../../store'
+import MainContainer from '../main-container'
 
 describe('MainContainer', () => {
     const wrapper = shallow(<MainContainer />)
@@ -14,11 +12,9 @@ describe('MainContainer', () => {
         expect(wrapper.find('Route').length).toBe(3)
     })
 
-    it('LoginForm matches snapshot', () => {
+    it('MainContainer matches snapshot', () => {
         const mainContainerRender = renderer.create(
-            <Provider store={store}>
-                <MainContainer />
-            </Provider>
+            <MainContainer />
         ).toJSON()
         expect(mainContainerRender).toMatchSnapshot()
     })

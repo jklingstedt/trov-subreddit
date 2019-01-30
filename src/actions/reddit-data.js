@@ -1,9 +1,11 @@
 export const SET_ARTICLES = 'SET_ARTICLES'
 
-export const setArticles = (articles, currentSub) => ({
+export const setArticles = (articles, currentSub, afterPage, paging) => ({
     type: SET_ARTICLES,
     payload: {
         articles,
-        currentSub
+        currentSub,
+        afterPage,
+        paging
     }
 })

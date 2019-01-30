@@ -1,8 +1,11 @@
 const colors = {
     red: 'red',
-    blue: 'green',
+    green: 'green',
     lightGrey: '#eee',
-    darkGrey: '#ccc'
+    darkGrey: '#ddd',
+    darkestGrey: '#ccc',
+    white: '#fff',
+    black: '#000'
 }
 
 export { colors as default }

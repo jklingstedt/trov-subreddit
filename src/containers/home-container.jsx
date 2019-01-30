@@ -1,20 +1,10 @@
 import React from 'react'
 
 import SubredditNav from '../components/subreddit-nav'
-
-const defaultSubs = [
-    {
-        title: 'Guitar Pedals',
-        slug: 'guitarpedals'
-    },
-    {
-        title: 'Guitars',
-        slug: 'guitars'
-    }
-]
+import { suggestedSubreddits } from '../constants/'
 
 const MainContainer = () => (
-    <SubredditNav subreddits={defaultSubs} />
+    <SubredditNav subreddits={suggestedSubreddits} />
 )
 
 export default MainContainer

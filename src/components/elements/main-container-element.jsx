@@ -4,7 +4,7 @@ import { instanceOf } from 'prop-types'
 
 const StyledMainContainer = styled.div`
     max-width: 1000px;
-    margin: auto;
+    margin: auto auto 3em;
     box-sizing: border-box;
 `
 

@@ -1,26 +1,19 @@
 import React from 'react'
-import { string } from 'prop-types'
-import styled from 'styled-components'
-
-import colors from '../../styles/colors'
-
-const StyledExternalLink = styled.a`
-    color: ${colors.blue}
-`
+import { string, instanceOf, oneOfType } from 'prop-types'
 
 const ExternalLink = ({ url, children }) => (
-    <StyledExternalLink
+    <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
     >
         { children }
-    </StyledExternalLink>
+    </a>
 )
 
 ExternalLink.propTypes = {
     url: string.isRequired,
-    children: string.isRequired
+    children: oneOfType([string, instanceOf(Object)]).isRequired
 }
 
 export default ExternalLink

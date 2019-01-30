@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleItem Component ArticleItem matches snapshot 1`] = `
+<li
+  className="sc-bwzfXH jzDYmE"
+>
+  <span
+    className="sc-bdVaJa jzEyq"
+  >
+    no image
+  </span>
+  <div
+    className="sc-bxivhb bUZGRr"
+  >
+    <h2>
+      <a
+        href="https://www.reddit.com/https://example.com"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        test title
+      </a>
+    </h2>
+    <p>
+      Posted by 
+       
+      <a
+        href="https://www.reddit.com/user/Emilio Estevez"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Emilio Estevez
+      </a>
+       
+      almost 49031 years
+       
+       ago
+    </p>
+    <p>
+      <a
+        href="https://www.reddit.com/https://example.com#siteTable"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        comments
+      </a>
+    </p>
+  </div>
+</li>
+`;
