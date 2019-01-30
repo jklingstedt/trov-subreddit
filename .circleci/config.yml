@@ -30,6 +30,7 @@ jobs:
             - run: yarn lint
             - run: yarn test --verbose
             - run: yarn cy:run
+            - run: yarn chromatic
 
             - store_artifacts:
                 path: cypress/screenshots

@@ -19,7 +19,8 @@
     "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/ --output-style compressed",
     "watch-css": "npm run build-css && node-sass --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "CHROMATIC_APP_CODE=9ki0kta2vsw chromatic test"
   },
   "dependencies": {
     "axios": "^0.18.0",
