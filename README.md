@@ -1,8 +1,7 @@
 # Trov Subreddit Application
 
 ## Installation
-To run this application locally, clone this repo, `cd` into it and run either `yarn install` or `npm install`
-. Note that I used yarn to build this and npm will create a package-lock file and warn you about it.
+To run this application locally, clone this repo, `cd` into it and run either `yarn install` or `npm install`. Please note that I used yarn to build this and npm will create a package-lock file and warn you about it.
 
 To run the application locally, run either `yarn start` or `npm run start` which will start up an instance of [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server).
 
@@ -23,12 +22,18 @@ Although I actually found that I didn't really need to use it, I imcorporated a 
 ![redux-devtools](doc-images/redux-devtools.png)
 
 ### CSS
-For CSS I am using a combination of scss via [`node-sass`](https://github.com/sass/node-sass) and [`styled-components`](https://www.styled-components.com/). I find working with `styled-components` very useful, and it plays well with other technology like `storybook`, which I will get into later in this document.
+For CSS I am using a combination of scss via [`node-sass`](https://github.com/sass/node-sass) and [`styled-components`](https://www.styled-components.com/). I find working with `styled-components` very useful, and it plays well with other technology like `storybook`, which I will get into later in this document. Their motivation for creating this project can be [read here](https://www.styled-components.com/docs/basics#motivation).
 
 ### Testing
 For unit testing, I used [`jest`](https://jestjs.io/), which comes bundled with [`create-react-app`](https://github.com/facebook/create-react-app).
 
-To run int tests, run `yarn test` or `npm run test`. To view code coverage run `yarn test:coverage` or `npm run test:watch`. This will create an html coverage report in `/coverage/lcov-report`. I am also publishing this report automatically as part of the CI/CD flow [as seen here](https://trov-reddit-code-coverage.netlify.com/).
+To run int tests, run `yarn test` or `npm run test`. To view code coverage run `yarn test:coverage` or `npm run test:watch`. This will create an html coverage report in `/coverage/lcov-report`. I am also publishing this report automatically as part of the [CI/CD](#continous-integrationdeployment) flow [as seen here](https://trov-reddit-code-coverage.netlify.com/).
+
+For integration testing, I am using [`cypress`](https://www.cypress.io/). These tests can be run by either `yarn cy:run` or `npm run cy:run`. To use the visual interactive runner/editor run either `yarn cy:open` or `npm run cy"open`. I have only added a single test as this is a fairly simple application, but I wanted to include it to show its abilities. This is also run automatically as part of the [Continous Integration/Deployment](#continous-integrationdeployment) which I will cover in more detail later in this document.
+
+I am also using a project called [`storybook`](https://storybook.js.org/) as a visual testing application and component library viewer. It is an essential tool in [component-driven development](https://blog.hichroma.com/component-driven-development-ce1109d56c8e), a practice I am becoming quite fond of. To view a live version of this, run either `yarn storybook` or `npm run storybook`. As part of my [CI/CD](#continous-integrationdeployment) flow I am also publishing a live version that can be [viewed here](https://trov-subreddit-storybook.netlify.com).
+
+##
 
 ### Continous Integration/Deployment
 ![circleci](doc-images/circle-ci.png)
