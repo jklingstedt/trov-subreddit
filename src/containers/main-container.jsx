@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
-import { connect } from 'react-redux'
 
 import history from '../utils/history'
 import asyncComponent from '../components/async'
@@ -9,9 +8,9 @@ import Header from '../components/header'
 
 const AsyncHomeContainer = asyncComponent(() => import('./home-container'))
 const AsyncSubredditContainer = asyncComponent(() => import('./subreddit-container'))
-export const Async404 = asyncComponent(() => import('../components/error-404'))
+const Async404 = asyncComponent(() => import('../components/error-404'))
 
-export const MainContainer = () => (
+const MainContainer = () => (
     <MainContainerElement>
         <Router history={history}>
             <Fragment>
@@ -25,9 +24,4 @@ export const MainContainer = () => (
         </Router>
     </MainContainerElement>
 )
-
-export const mapStateToProps = state => ({
-    user: state.user
-})
-
-export default connect(mapStateToProps)(MainContainer)
+export default MainContainer

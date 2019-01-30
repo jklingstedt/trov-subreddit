@@ -8,7 +8,7 @@ import UnformattedList from '../components/elements/unformatted-list'
 import ArticleItem from '../components/article-item'
 import Button from '../components/elements/button'
 
-class SubredditContainer extends PureComponent {
+export class SubredditContainer extends PureComponent {
     static defaultProps = {
         currentSub: null,
         afterPage: null

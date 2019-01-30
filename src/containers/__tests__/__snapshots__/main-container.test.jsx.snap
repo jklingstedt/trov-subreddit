@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainContainer LoginForm matches snapshot 1`] = `
+exports[`MainContainer MainContainer matches snapshot 1`] = `
 <div
   className="sc-bdVaJa enHcpj"
 >
