@@ -32,6 +32,8 @@ const Button = props => (
 )
 
 Button.defaultProps = {
+    size: 'small',
+    color: 'green',
     children: 'submit',
     onClick: () => null
 }

@@ -2,7 +2,8 @@
 
 exports[`Button Component Button matches snapshot 1`] = `
 <button
-  className="sc-bdVaJa dRBDuI"
+  className="sc-bdVaJa Moiob"
+  color="green"
   onClick={
     [MockFunction] {
       "calls": Array [

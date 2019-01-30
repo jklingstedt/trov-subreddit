@@ -10,7 +10,7 @@ describe('ArticleItem Component', () => {
             author: 'Emilio Estevez',
             thumbnail: 'self',
             permalink: 'https://example.com',
-            created: Date.now()
+            created: 154888188
         }
     }
 
