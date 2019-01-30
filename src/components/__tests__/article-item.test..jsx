@@ -1,5 +1,4 @@
 import React from 'react'
-import { shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 import ArticleItem from '../article-item'
 
@@ -14,14 +13,6 @@ describe('ArticleItem Component', () => {
             created: Date.now()
         }
     }
-
-    const wrapper = shallow(
-        <ArticleItem {...defaultProps} />
-    )
-
-    it('should render ArticleItem component', () => {
-        console.log(wrapper.debug()) // eslint-disable-line
-    })
 
     it('ArticleItem matches snapshot', () => {
         const modalRender = renderer.create(
