@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
 
 import { testData } from '../../utils/test-data'
 import { SubredditContainer } from '../subreddit-container'
