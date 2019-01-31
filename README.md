@@ -7,7 +7,7 @@ To run the application locally, run either `yarn start` or `npm run start` which
 
 To create an optimized production build run either `yarn build:prod` or `npm run build:prod`. This will create a static build in the `/build` directory, which is ignored by `git` on purpose. A live example of a prod build [can be viewed here](https://trov-subreddit.netlify.com/).
 
-Many other useful/intersting scripts can be seen in the `scripts` section of the [`package.json`](package.json#L5) file. An example would be `yarn build:stage` which will use environment variables from [`.env.staging`](.env.staging) for use in the build. Although I am not using it in this example, this is part of my starter kit and very useful for testing the application against different API versions.
+Many other useful/interesting scripts can be seen in the `scripts` section of the [`package.json`](package.json#L5) file. An example would be `yarn build:stage` which will use environment variables from [`.env.staging`](.env.staging) for use in the build. Although I am not using it in this example, this is part of my starter kit and very useful for testing the application against different API versions.
 
 ## Technology used
 
@@ -34,7 +34,7 @@ For integration testing, I am using [`cypress`](https://www.cypress.io/). These 
 I am also using a project called [`storybook`](https://storybook.js.org/) as a visual testing application and component library viewer. It is an essential tool in [component-driven development](https://blog.hichroma.com/component-driven-development-ce1109d56c8e), a practice I am becoming quite fond of. To view a live version of this, run either `yarn storybook` or `npm run storybook`. As part of my [CI/CD](#continous-integrationdeployment) flow I am also publishing a live version that can be [viewed here](https://trov-subreddit-storybook.netlify.com).
 
 ### Continous Integration/Deployment
-For continuous integration I am using a product called [CircleCI](https://circleci.com/). This integrates with GitHub and runs all tests specified in [`.circleci/config.yml`]. These tests are run with every commit and their status can be viewed within pull requests as seen in the image below:
+For continuous integration I am using a product called [CircleCI](https://circleci.com/). This integrates with GitHub and runs all tests specified in [`.circleci/config.yml`](.circleci/config.yml). These tests are run with every commit and their status can be viewed within pull requests as seen in the image below:
 
 ![github-integration](doc-images/github-integration.png)
 
