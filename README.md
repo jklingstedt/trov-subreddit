@@ -29,14 +29,19 @@ For unit testing, I used [`jest`](https://jestjs.io/), which comes bundled with 
 
 To run int tests, run `yarn test` or `npm run test`. To view code coverage run `yarn test:coverage` or `npm run test:watch`. This will create an html coverage report in `/coverage/lcov-report`. I am also publishing this report automatically as part of the [CI/CD](#continous-integrationdeployment) flow [as seen here](https://trov-reddit-code-coverage.netlify.com/).
 
-For integration testing, I am using [`cypress`](https://www.cypress.io/). These tests can be run by either `yarn cy:run` or `npm run cy:run`. To use the visual interactive runner/editor run either `yarn cy:open` or `npm run cy"open`. I have only added a single test as this is a fairly simple application, but I wanted to include it to show its abilities. This is also run automatically as part of the [Continous Integration/Deployment](#continous-integrationdeployment) which I will cover in more detail later in this document.
+For integration testing, I am using [`cypress`](https://www.cypress.io/). These tests can be run by either `yarn cy:run` or `npm run cy:run`. To use the visual, interactive runner/editor run either `yarn cy:open` or `npm run cy"open`. I have only added a single test as this is a fairly simple application, but I wanted to include it to show its abilities. This is also run automatically as part of the [Continous Integration/Deployment](#continous-integrationdeployment) which I will cover in more detail later in this document.
 
 I am also using a project called [`storybook`](https://storybook.js.org/) as a visual testing application and component library viewer. It is an essential tool in [component-driven development](https://blog.hichroma.com/component-driven-development-ce1109d56c8e), a practice I am becoming quite fond of. To view a live version of this, run either `yarn storybook` or `npm run storybook`. As part of my [CI/CD](#continous-integrationdeployment) flow I am also publishing a live version that can be [viewed here](https://trov-subreddit-storybook.netlify.com).
 
-##
-
 ### Continous Integration/Deployment
-![circleci](doc-images/circle-ci.png)
+For continuous integration I am using a product called [CircleCI](https://circleci.com/). This integrates with GitHub and runs all tests specified in [`.circleci/config.yml`]. These tests are run with every commit and their status can be viewed within pull requests as seen in the image below:
+
 ![github-integration](doc-images/github-integration.png)
-![netlify](doc-images/netlify.png)
-![redux-devtools](doc-images/redux-devtools.png)
+
+I am also experimenting with a product called [Chromatic](https://www.chromaticqa.com) for automated visual testing. As part of the CI/CD process I push all the stories from `storybook` to their service. They create rendered versions of your components and detect differences between commits. You can also set it up to require manual approval of all differences which would then kick off the next step in the deployment process. I added this late in the game and don't have it fully set up, but an example of their UI can be viewed below:
+
+![chromatic](doc-images/chromatic.png)
+
+For continuous deployment, I am using a product called [Netlify](https://www.netlify.com/). Git commits trigger test builds and are also part of the checks component viewed in the image above. I have this set up to deploy the [example application](https://trov-subreddit.netlify.com/), [code coverage reports](https://trov-reddit-code-coverage.netlify.com/), and the [storybook component viewer](https://trov-subreddit-storybook.netlify.com) with all merges to the `master` branch of this repo.
+
+<!-- ![netlify](doc-images/netlify.png) -->
