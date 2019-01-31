@@ -43,5 +43,3 @@ I am also experimenting with a product called [Chromatic](https://www.chromaticq
 ![chromatic](doc-images/chromatic.png)
 
 For continuous deployment, I am using a product called [Netlify](https://www.netlify.com/). Git commits trigger test builds and are also part of the checks component viewed in the image above. I have this set up to deploy the [example application](https://trov-subreddit.netlify.com/), [code coverage reports](https://trov-reddit-code-coverage.netlify.com/), and the [storybook component viewer](https://trov-subreddit-storybook.netlify.com) with all merges to the `master` branch of this repo.
-
-<!-- ![netlify](doc-images/netlify.png) -->
