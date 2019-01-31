@@ -36,11 +36,4 @@ describe('SubredditContainer Component', () => {
         instance.props.dispatch()
         expect(instance.props.dispatch).toBeCalled()
     })
-
-    it('SubredditContainer matches snapshot', () => {
-        const modalRender = renderer.create(
-            <SubredditContainer {...defaultProps} />
-        ).toJSON()
-        expect(modalRender).toMatchSnapshot()
-    })
 })
