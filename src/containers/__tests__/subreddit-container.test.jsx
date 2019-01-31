@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import renderer from 'react-test-renderer'
 
 import { testData } from '../../utils/test-data'
 import { SubredditContainer } from '../subreddit-container'
@@ -35,12 +34,5 @@ describe('SubredditContainer Component', () => {
         instance.fetchAndStoreSubreddits()
         instance.props.dispatch()
         expect(instance.props.dispatch).toBeCalled()
-    })
-
-    it('SubredditContainer matches snapshot', () => {
-        const modalRender = renderer.create(
-            <SubredditContainer {...defaultProps} />
-        ).toJSON()
-        expect(modalRender).toMatchSnapshot()
     })
 })
