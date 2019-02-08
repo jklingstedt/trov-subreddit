@@ -12,7 +12,7 @@ const Async404 = lazy(() => import('../components/error-404'))
 const Loading = () => 'Loading...'
 
 const MainContainer = () => (
-    <Suspense fallback={Loading}>
+    <Suspense fallback={<Loading />}>
         <MainContainerElement>
             <Router history={history}>
                 <Fragment>
