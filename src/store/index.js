@@ -7,7 +7,7 @@ const enhancer = compose(
         promiseMiddleware
     ),
     window.window.__REDUX_DEVTOOLS_EXTENSION__ ?
-        window.window.__REDUX_DEVTOOLS_EXTENSION__() :
+        window.window.__REDUX_DEVTOOLS_EXTENSION__({ trace: true }) :
         f => f
 )
 
