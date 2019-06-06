@@ -12,7 +12,7 @@
     "build:local": "env-cmd .env.development.local npm-run-all build-css build-js",
     "test": "CI=true react-scripts test",
     "test:watch": "react-scripts test --watch",
-    "test:coverage": "react-scripts test --coverage",
+    "test:coverage": "CI=true react-scripts test --coverage",
     "lint": "eslint --ext .jsx --ext .js src/ cypress/",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
