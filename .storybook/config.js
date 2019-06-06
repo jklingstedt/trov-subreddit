@@ -1,5 +1,4 @@
 import { configure } from '@storybook/react'
-import 'storybook-chromatic'
 
 import '../src/styles/app.css'
 
