@@ -24,24 +24,24 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "date-fns": "^2.3.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "date-fns": "^2.6.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.1",
     "react-scripts": "^3.2.0",
     "redux": "^4.0.4",
     "redux-promise": "^0.6.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "@storybook/addon-actions": "^5.2.4",
-    "@storybook/addon-links": "^5.2.4",
-    "@storybook/addons": "^5.2.4",
-    "@storybook/react": "^5.2.4",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
     "babel-loader": "^8.0.5",
-    "cypress": "^3.4.1",
+    "cypress": "^3.5.0",
     "cypress-plugin-snapshots": "^1.2.9",
     "env-cmd": "^10.0.1",
     "enzyme": "^3.10.0",
@@ -50,9 +50,9 @@
     "eslint-config-jhh-react": "^1.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.16.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
-    "react-test-renderer": "^16.10.2"
+    "react-test-renderer": "^16.11.0"
   },
   "jest": {
     "collectCoverageFrom": [
