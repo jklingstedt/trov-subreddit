@@ -9,11 +9,6 @@ import ArticleItem from '../components/article-item'
 import Button from '../components/elements/button'
 
 export class SubredditContainer extends PureComponent {
-    static defaultProps = {
-        currentSub: null,
-        afterPage: null
-    }
-
     static propTypes = {
         articles: instanceOf(Array).isRequired,
         currentSub: string,
@@ -24,6 +19,11 @@ export class SubredditContainer extends PureComponent {
             }).isRequired
         }).isRequired,
         dispatch: func.isRequired
+    }
+
+    static defaultProps = {
+        currentSub: null,
+        afterPage: null
     }
 
     componentDidMount() {
