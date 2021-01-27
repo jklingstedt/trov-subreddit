@@ -1,9 +1,12 @@
 exports[`Home page > should render the home page #0`] = `
-<header class="sc-ifAKCX gcPEBf">
-  <a class="sc-bxivhb drpxUl" href="/">Home</a>
-  <fieldset class="sc-htpNat PiYSI">
+<header class="sc-eCssSg fqVOuX">
+  <a class="sc-hKgILt hQgVcw" href="/">Home</a>
+  <fieldset class="sc-dlfnbm ixdErI">
     <label for="subreddit-select">Select a Suggested Subreddit</label
-    ><select id="subreddit-select" class="sc-EHOje jvXsky"
+    ><select
+      id="subreddit-select"
+      data-cy="select-menu"
+      class="sc-jSgupP hxWQyh"
       ><optgroup label="Select a Suggested Subreddit"
         ><option value="reactjs">reactjs</option
         ><option value="guitarpedals">Guitar Pedals</option
@@ -16,10 +19,10 @@ exports[`Home page > should render the home page #0`] = `
       ></select
     >
   </fieldset>
-  <form class="sc-bZQynM epBIuB">
+  <form class="sc-gKsewC kHdsYj">
     <input name="subreddit" placeholder="Enter a subreddit..." /><button
       color="green"
-      class="sc-bwzfXH cEwmJl"
+      class="sc-gsTCUz hhaOxR"
     >
       submit
     </button>
@@ -28,9 +31,9 @@ exports[`Home page > should render the home page #0`] = `
 `;
 
 exports[`Home page > should render the home page #1`] = `
-<nav class="sc-gzVnrw fgSTpW">
+<nav class="sc-iBPRYJ hRyXLA">
   <h2>Suggested Subreddits</h2>
-  <ul class="sc-htoDjs emIcqi">
+  <ul class="sc-fubCfw iqJQQP">
     <li><a href="/r/reactjs">reactjs</a></li>
     <li><a href="/r/guitarpedals">Guitar Pedals</a></li>
     <li><a href="/r/guitar">Guitar</a></li>

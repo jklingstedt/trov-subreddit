@@ -3,8 +3,6 @@ describe('Home page', () => {
         cy.visit('/').then(() => {
             cy.get('header').toMatchSnapshot()
             cy.get('nav').toMatchSnapshot()
-            cy.get('input')
-                .type('pics')
             // cy.get('form').submit().then(() => {
             //     const items = cy.get('li')
             //     expect(items.length).to.eq(26)
@@ -12,12 +10,13 @@ describe('Home page', () => {
         })
     })
 
-    // it('should display errors', () => {
-    //     cy.visit('/')
-    //     cy.get('input').first().type('jason.klingstedt@gmail.com')
-    //     cy.get('input').last().type('password')
-    //     cy.get('form').submit()
-    // })
+    it('should navigate with the select menu', () => {
+        /* ==== Generated with Cypress Studio ==== */
+        cy.visit('http://localhost:3000/');
+        cy.get('[data-cy=select-menu]').select('guitarpedals');
+        /* ==== End Cypress Studio ==== */
+        cy.url().should('contain', '/r/guitarpedals')
+    })
 
     // it('should log on as admin', () => {
     //     cy.login('admin')

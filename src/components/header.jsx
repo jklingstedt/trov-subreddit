@@ -61,7 +61,7 @@ const Header = () => (
         <StyledLink to="/">Home</StyledLink>
         <Fieldset>
             <label htmlFor="subreddit-select">Select a Suggested Subreddit</label>
-            <StyledSelect onChange={e => handleSelectChange(e)} id="subreddit-select">
+            <StyledSelect onChange={e => handleSelectChange(e)} id="subreddit-select" data-cy="select-menu">
                 <optgroup label="Select a Suggested Subreddit">
                     {suggestedSubreddits.map(item => (
                         <option
