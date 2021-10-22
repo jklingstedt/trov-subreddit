@@ -20,7 +20,9 @@
     "watch-css": "npm run build-css && node-sass --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "CHROMATIC_APP_CODE=9ki0kta2vsw chromatic test"
+    "chromatic": "CHROMATIC_APP_CODE=9ki0kta2vsw chromatic test",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -32,7 +34,8 @@
     "react-scripts": "^3.3.0",
     "redux": "^4.0.5",
     "redux-promise": "^0.6.0",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -70,5 +73,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "snyk": true
 }
