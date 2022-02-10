@@ -50,7 +50,7 @@
     "eslint-config-jhh-react": "^1.1.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-react": "^7.17.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "npm-run-all": "^4.1.5",
     "react-test-renderer": "^16.12.0"
   },
