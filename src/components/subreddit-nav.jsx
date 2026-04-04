@@ -1,6 +1,6 @@
 import React from 'react'
 import { instanceOf } from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link } from '@tanstack/react-router'
 import styled from 'styled-components'
 
 import colors from '../styles/colors'
@@ -32,7 +32,7 @@ const SubredditNav = props => (
         <StyledList>
             {props.subreddits.map(sub => (
                 <li key={sub.slug}>
-                    <Link to={`/r/${sub.slug}`}>
+                    <Link to="/r/$sub" params={{ sub: sub.slug }}>
                         {sub.title}
                     </Link>
                 </li>

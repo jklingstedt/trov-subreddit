@@ -1,14 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Router } from 'react-router-dom'
+import { RouterProvider, createRouter, createRootRoute } from '@tanstack/react-router'
 
 import SubredditNav from '../subreddit-nav'
-import history from '../../utils/history'
 import { suggestedSubreddits } from '../../constants'
+
+// Create a simple mock router for Storybook
+const rootRoute = createRootRoute({
+  component: () => <SubredditNav subreddits={suggestedSubreddits} />,
+})
+
+const router = createRouter({
+  routeTree: rootRoute,
+})
 
 storiesOf('Subreddit Nav', module)
     .add('Subreddit Nav', () => (
-        <Router history={history}>
-            <SubredditNav subreddits={suggestedSubreddits} />
-        </Router>
+        <RouterProvider router={router} />
     ))

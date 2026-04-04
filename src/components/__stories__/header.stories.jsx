@@ -1,13 +1,19 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Router } from 'react-router-dom'
+import { RouterProvider, createRouter, createRootRoute } from '@tanstack/react-router'
 
 import Header from '../header'
-import history from '../../utils/history'
+
+// Create a simple mock router for Storybook
+const rootRoute = createRootRoute({
+  component: () => <Header />,
+})
+
+const router = createRouter({
+  routeTree: rootRoute,
+})
 
 storiesOf('Header', module)
     .add('Default Header', () => (
-        <Router history={history}>
-            <Header />
-        </Router>
+        <RouterProvider router={router} />
     ))

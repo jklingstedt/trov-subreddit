@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from '@tanstack/react-router'
 import styled from 'styled-components'
 
 import { suggestedSubreddits } from '../constants'
-import history from '../utils/history'
 import colors from '../styles/colors'
 import Button from './elements/button'
 import Fieldset from './elements/fieldset'
@@ -47,41 +46,46 @@ const StyledForm = styled.form`
     }
 `
 
-const handleSelectChange = (e) => {
-    history.push(`/r/${e.target.value}`)
-}
+const Header = () => {
+    const navigate = useNavigate()
 
-const handleFormSubmit = (e) => {
-    e.preventDefault()
-    history.push(`/r/${e.target.children[0].value}`)
-}
+    const handleSelectChange = (e) => {
+        navigate({ to: '/r/$sub', params: { sub: e.target.value } })
+    }
 
-const Header = () => (
-    <StyledHeader>
-        <StyledLink to="/">Home</StyledLink>
-        <Fieldset>
-            <label htmlFor="subreddit-select">Select a Suggested Subreddit</label>
-            <StyledSelect onChange={e => handleSelectChange(e)} id="subreddit-select">
-                <optgroup label="Select a Suggested Subreddit">
-                    {suggestedSubreddits.map(item => (
-                        <option
-                            value={item.slug}
-                            key={item.slug}
-                        >
-                            {item.title}
-                        </option>
-                    ))}
-                </optgroup>
-            </StyledSelect>
-        </Fieldset>
-        <StyledForm onSubmit={e => handleFormSubmit(e)}>
-            <input
-                name="subreddit"
-                placeholder="Enter a subreddit..."
-            />
-            <Button color="green" size="small">submit</Button>
-        </StyledForm>
-    </StyledHeader>
-)
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        const subreddit = e.target.children[0].value
+        navigate({ to: '/r/$sub', params: { sub: subreddit } })
+    }
+
+    return (
+        <StyledHeader>
+            <StyledLink to="/">Home</StyledLink>
+            <Fieldset>
+                <label htmlFor="subreddit-select">Select a Suggested Subreddit</label>
+                <StyledSelect onChange={e => handleSelectChange(e)} id="subreddit-select">
+                    <optgroup label="Select a Suggested Subreddit">
+                        {suggestedSubreddits.map(item => (
+                            <option
+                                value={item.slug}
+                                key={item.slug}
+                            >
+                                {item.title}
+                            </option>
+                        ))}
+                    </optgroup>
+                </StyledSelect>
+            </Fieldset>
+            <StyledForm onSubmit={e => handleFormSubmit(e)}>
+                <input
+                    name="subreddit"
+                    placeholder="Enter a subreddit..."
+                />
+                <Button color="green" size="small">submit</Button>
+            </StyledForm>
+        </StyledHeader>
+    )
+}
 
 export default Header

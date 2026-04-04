@@ -25,20 +25,21 @@ const StyledButton = styled.button`
     cursor: pointer;
 `
 
-const Button = props => (
-    <StyledButton {...props} onClick={props.onClick}>
-        {props.children}
+const Button = ({
+    size = 'small',
+    color = 'green',
+    children = 'submit',
+    onClick = () => null,
+    ...props
+}) => (
+    <StyledButton {...props} size={size} color={color} onClick={onClick}>
+        {children}
     </StyledButton>
 )
 
-Button.defaultProps = {
-    size: 'small',
-    color: 'green',
-    children: 'submit',
-    onClick: () => null
-}
-
 Button.propTypes = {
+    size: string,
+    color: string,
     children: string,
     onClick: func
 }
